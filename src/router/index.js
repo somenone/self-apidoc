@@ -3,12 +3,22 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'test',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/Home')
-  }
+    path:'/projects',
+    name: 'projects',
+    component: () => import('@/views/projects/index.vue')
+  },{
+    path: '/:projectname',
+    name: 'project',
+    component: () => import( /* webpackChunkName: "about" */ '@/views/Home')
+  },
+  {
+    path: '/:projectname/:apiname',
+    name: 'api',
+    component: () => import( /* webpackChunkName: "about" */ '@/views/Home')
+  },
+  
 ]
 
 const router = new VueRouter({

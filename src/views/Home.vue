@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="top"></div>
+    <Top class="top" />
     <div class="content">
-      <div class="left"></div>
+      <Left class="left"/>
       <Main/>
     </div>
   </div>
@@ -11,11 +11,16 @@
 <script>
 // @ is an alias to /src
 import Main from '@/views/main/index'
+import Left from '@/views/Left/index'
+import Top from '@/views/Top/index'
+
 
 export default {
   name: 'Home',
   components: {
-    Main
+    Main,
+    Left,
+    Top
   }
 }
 </script>
@@ -37,10 +42,11 @@ export default {
   background-color: #333;
   width: 100%;
   position: fixed;
+  z-index: 1;
 }
 .left{
   height: 100%;
-  width: 200px;
+  width: 240px;
   background-color: #333;
 }
 
